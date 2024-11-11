@@ -14,9 +14,9 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: 나의 Dev 저장소 # the main title
+title: LeeJunho # the main title
 
-tagline: 안녕하세요 이준호 입니다. # it will display as the subtitle
+tagline: Devlog. # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
