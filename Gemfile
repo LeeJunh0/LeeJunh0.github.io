@@ -15,3 +15,4 @@ end
 
 gem "webrick", "~> 1.9"
 gem 'jekyll-compose', group: [:jekyll_plugins]
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
