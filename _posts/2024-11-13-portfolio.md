@@ -1,12 +1,9 @@
 ---
 title: LeeJunho Portfolio.
-date: YYYY-MM-DD HH:MM:SS +09:00
+date: 2024-11-13 21:05:00 +0900
+lastmod: 2024-11-14 14:29:00 +0900
 categories: [Portfolio]  
-tags:
-  [
-    Info,
-
-  ]
+tags:  [ Info ]
 ---
 
 # About Me
