@@ -1,5 +1,5 @@
 ---
-title: 기본기 복습문제1.
+title: 기본기 복습문제3.
 date: 2024-11-16 07:24:00 +0900
 categories: [ReviewQuestion]  
 tags:  [ C, C++, ]

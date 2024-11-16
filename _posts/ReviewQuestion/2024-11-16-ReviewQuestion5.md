@@ -1,58 +1,75 @@
 ---
-title: 기본기 복습문제1.
-date: 2024-11-16 06:35:00 +0900
+title: 기본기 복습문제5.
+date: 2024-11-16 08:12:00 +0900
 categories: [ReviewQuestion]  
 tags:  [ C, C++, ]
 ---
-복습문제 1번이다!
+복습문제 5번이다!
 
 # 문제   
 ---------------------------------------
-![DeskTop View](/assets/img/ReviewQuestion1.png){:w = "700" h = "400"}
+![DeskTop View](/assets/img/ReviewQuestion5.png){:w = "700" h = "400"}
 
 ---------------------------------------
 
 # 풀이
 
-배열 2개를 탐색해서 input을 전부 카운팅 하는 문제다.
+전역으로 선언된 다차원배열을 함수들 안에서 순회하며 조건에 맞게 
+카운팅하고 카운트를 출력하는 문제같다.
+
 
 ```c++
+void FindUpper();
+void FindLower();
+
+char arrays[2][3];
+
 int main()
 {
-    int arr1[] = { 2, 1, 2, 4, 5 };
-    int arr2[][3] =
+    for(int i = 0 ; i < sizeof(arrays) / sizeof(arrays[0]); i++)
     {
-        { 2, 5, 3 },
-        { 4, 5, 7 },
-        { 8, 7, 2 }
-    };
-
-    int input;
-    std::cin >> input;
-
-    int count = 0;
-    for(int i = 0; i < sizeof(arr1) / sizeof(int); i++)
-    {
-        if(input == arr1[i])
-            count++;
+        for(int j = 0; j < sizeof(arrays[0]) / sizeof(char); j++)
+            std::cin >> arrays[i][j];
     }
 
-    for(int i = 0; i < sizeof(arr2) / sizeof(arr2[0]); i++)
+    FindUpper();
+    FindLower();
+    return 0;
+}
+
+void FindUpper()
+{
+    int count = 0;
+    for(int i = 0 ; i < sizeof(arrays) / sizeof(arrays[0]); i++)
     {
-        for(int j = 0; j < sizeof(arr2[0]) / sizeof(int); j++)
+        for(int j = 0; j < sizeof(arrays[0]) / sizeof(char); j++)
         {
-            if(input == arr2[i][j])
+            if(97 > arrays[i][j])
                 count++;
         }
     }
 
-    std::cout << count;
-    return 0;
+    printf("대문자는%d개\n", count);
+}
+
+void FindLower()
+{
+    int count = 0;
+    for(int i = 0 ; i < sizeof(arrays) / sizeof(arrays[0]); i++)
+    {
+        for(int j = 0; j < sizeof(arrays[0]) / sizeof(char); j++)
+        {
+            if(97 <= arrays[i][j])
+                count++;
+        }
+    }
+
+    printf("소문자는%d개\n", count);
 }
 ```
 ---------------------------------------
 
 # 후기
 
-확실히 난이도가 전보단 올랐다.
+으으 중복코드가 너무많다... 재사용성이 구리다..
 

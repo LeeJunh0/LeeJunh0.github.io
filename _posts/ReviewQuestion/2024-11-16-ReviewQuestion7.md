@@ -1,52 +1,70 @@
 ---
-title: 기본기 복습문제1.
-date: 2024-11-16 06:35:00 +0900
+title: 기본기 복습문제7.
+date: 2024-11-16 08:42:00 +0900
 categories: [ReviewQuestion]  
 tags:  [ C, C++, ]
 ---
-복습문제 1번이다!
+복습문제 7번이다!
 
 # 문제   
 ---------------------------------------
-![DeskTop View](/assets/img/ReviewQuestion1.png){:w = "700" h = "400"}
+![DeskTop View](/assets/img/ReviewQuestion7.png){:w = "700" h = "400"}
 
 ---------------------------------------
 
 # 풀이
 
-배열 2개를 탐색해서 input을 전부 카운팅 하는 문제다.
+어우 지문이 상당히 긴데.. 요약하자면 구조체를 만들어
+조건에 맞게 값을 할당하고 해당 구조체의 값들을 출력하는 문제이다.
 
 ```c++
+struct PROJECT
+{
+    int num;
+    char id;
+    int vect[4];
+};
+
 int main()
 {
-    int arr1[] = { 2, 1, 2, 4, 5 };
-    int arr2[][3] =
-    {
-        { 2, 5, 3 },
-        { 4, 5, 7 },
-        { 8, 7, 2 }
-    };
-
+    PROJECT z;
+    
     int input;
     std::cin >> input;
-
-    int count = 0;
-    for(int i = 0; i < sizeof(arr1) / sizeof(int); i++)
+    
+    if (input / 100 >= 1)
     {
-        if(input == arr1[i])
-            count++;
+        z.num = 10;
+        z.id = 'Q';
+        z.vect[0] = 9;
+        z.vect[1] = 1;
+        z.vect[2] = 6;
+        z.vect[3] = 2;
     }
-
-    for(int i = 0; i < sizeof(arr2) / sizeof(arr2[0]); i++)
+    else if (input / 10 >= 1)
     {
-        for(int j = 0; j < sizeof(arr2[0]) / sizeof(int); j++)
-        {
-            if(input == arr2[i][j])
-                count++;
-        }
+        z.num = 8;
+        z.id = 'T';
+        z.vect[0] = 5;
+        z.vect[1] = 1;
+        z.vect[2] = 2;
+        z.vect[3] = 3;
     }
-
-    std::cout << count;
+    else
+    {
+        z.num = 5;
+        z.id = 'G';
+        z.vect[0] = 1;
+        z.vect[1] = 2;
+        z.vect[2] = 3;
+        z.vect[3] = 4;
+    }
+    
+    std::cout << z.id << std::endl;
+    std::cout << z.num << std::endl;
+    for (int i = 0; i < sizeof(z.vect) / sizeof(int); i++)
+        std::cout << z.vect[i] << " ";
+    
     return 0;
 }
 ```
@@ -54,5 +72,5 @@ int main()
 
 # 후기
 
-확실히 난이도가 전보단 올랐다.
+하드코딩때문에 코드가 많아 보이지만 최선이지 않을까 싶다..!
 
