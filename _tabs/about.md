@@ -43,21 +43,21 @@ C#, C++, Visual Studio, Git, Unity
   <tbody>
     <tr>
         <td style="text-align: center;">
-          <img src="https://img.youtube.com/vi/jJ99QTiroZ8/hqdefault.jpg" style="width: 200px; height: auto;">
+          <img src="https://img.youtube.com/vi/jJ99QTiroZ8/hqdefault.jpg" alt="3DRPG Image"style=" width: 200px; height: auto;">
           <br>Unity 3D 로스트아크 모작<br>
           <a href="https://www.youtube.com/watch?v=jJ99QTiroZ8">         
             영상
           </a>
          </td>      
         <td style="text-align: center;">
-        <img src="https://img.youtube.com/vi/jJ99QTiroZ8/hqdefault.jpg" style="width: 200px; height: auto;">
+        <img src="https://img.youtube.com/vi/jJ99QTiroZ8/hqdefault.jpg" alt="3DRogueImage Image"style=" style="width: 200px; height: auto;">
         <br>Unity 3D 뱀서 모작<br>
         <a href="https://www.youtube.com/watch?v=jJ99QTiroZ8">         
             영상
           </a>
         </td>
         <td style="text-align: center;">
-        <img src="https://img.youtube.com/vi/jJ99QTiroZ8/hqdefault.jpg" style="width: 200px; height: auto;">
+        <img src="https://img.youtube.com/vi/jJ99QTiroZ8/hqdefault.jpg" alt="2DRhythmImage"style=" style="width: 200px; height: auto;">
         <br>Unity 2D를 이용한 리듬게임<br>
         <a href="https://www.youtube.com/watch?v=jJ99QTiroZ8">         
             영상
