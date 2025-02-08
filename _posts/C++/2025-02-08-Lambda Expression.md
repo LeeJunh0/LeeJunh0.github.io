@@ -94,3 +94,120 @@ int main()
 이런 저런식으로 람다식을 사용할수있는데 위에 설명 했듯이 함수 객체와 비교하면 
 
 보다 간결하고 가독성이 좋고, 코드 작성과 유지보수에 용이하다.
+
+---------------------------------
+# 람다식을 사용 혹은 응용하는 라이브러리 함수들
+
+- Sort함수(정렬)
+
+```c++
+#include <algorithm> // 헤더 선언
+
+// std::sort의 함수 원형
+template<class RandomIt>
+void sort(RandomIt first, RandomIt last);
+
+template<class RandomIt, class Compare>
+void sort(RandomIt fitst, RandomIt last, Compare comp);
+```
+
+- first : 정렬을 시작할 범위의 첫 번째 요소의 이터레이터
+
+- last : 정렬을 종료할 범위의 마지막 + 1 요소의 이터레이터
+
+- comp : 정렬 기준을 제공하는 함수나 함수객체를 대신할 람다식
+
+
+만약 비교함수(comp)가 제공되지 않으면 디폴트로 < 연산자를 사용하여 비교를
+
+수행하고 오름차순으로 정렬한다.
+
+---------------------------------
+
+## 비교함수 멤버함수를 사용한 예제
+
+```c++
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+struct Info 
+{
+	int val;
+	bool operator < (const Info& i) const { return val > i.val; // val이 큰 원소가 앞에 오도록 정렬 }
+};
+
+int main() 
+{
+	vector<Info> v;
+	for (int i = 1; i <= 5; i++) 
+      v.push_back(Info{ i });
+
+	sort(v.begin(), v.end());
+
+	for (auto& i : v) 
+      cout << i.val << ' '; cout << '\n'; // 5 4 3 2 1
+}
+```
+
+## 비교함수 전역함수를 사용한 예제
+
+```c++
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+bool compare(const string& a, const string& b)
+{
+    if (a.size() != b.size()) // 사이즈가 다르면 길이순으로 정렬
+        return a.size() < b.size();
+
+    return a > b; // 사이즈가 같으면 사전순 정렬
+}
+
+int main()
+{
+    vector<string> v{ "stack", "queue", "list", "set", "map" };
+    sort(v.begin(), v.end(), compare);
+
+    for (auto& i : v)
+        cout << i << ' '; cout << '\n'; // set map list stack queue
+}
+```
+
+## 비교함수 람다식
+
+```c++
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    vector<int> vec = { 4,6,1,5,7,9,3,2,8 };
+    
+    sort(vec.begin(), vec.end(), [] (int a, int b){
+        return a < b;
+    });
+    
+    for (int n : vec)
+        cout << n << " "; // 1,2,3,4,5,6,7,8,9
+    
+    return 0;
+}
+```
+
+그리고 sort에 람다식을 사용 할 때 디버깅 해보면 신기한걸 볼수있는데
+
+우린 첫과 마지막의 주소를 sort에 넣어줬지만 a의 값을보면 4가 아니고 6인걸 볼수있는데
+
+이건 sort의 정렬알고리즘이 퀵정렬과 Introsort 알고리즘이기 때문이다. 분할한 배열을 좌우 피벗을 기준으로 정렬해서
+
+정렬과정에서 비교함수가 바뀌지않는 이상 요소가 어떻게 비교되든 정렬 결과는 동일해진다.
+
