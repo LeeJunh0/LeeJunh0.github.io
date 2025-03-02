@@ -2,7 +2,7 @@
 title: BruteForce 연습문제 2
 date: 2025-03-01 18:59:00 +0900
 categories: [Question]  
-tags:  [ C, C++, BFS]
+tags:  [ C, C++, BruteForce ]
 ---
 
 완전탐색에 익숙해지기 위한 연습문제 2 이다!

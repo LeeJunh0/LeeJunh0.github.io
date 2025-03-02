@@ -2,7 +2,7 @@
 title: BackTracking 연습문제 1
 date: 2025-03-01 19:30:00 +0900
 categories: [Question]  
-tags:  [ C, C++, BFS]
+tags:  [ C, C++, BackTracking ]
 ---
 
 백트래킹에 익숙해지기 위한 연습문제 1 이다!
