@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://leejunh0.github.io/sitemap.xml
