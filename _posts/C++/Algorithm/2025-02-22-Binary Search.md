@@ -16,10 +16,7 @@ tags:  [ Algorithm ]
 
 배열 내의 값을 탐색하는데 사용되지만 리스트, 트리 등에서도 사용할 수 있다.
 
-
-## 이진탐색의 동작방식을 보자
 -------------------------------
-
 ![DeskTop View](/assets/img/binarysearch.png){: w= "500" h= "350"}
 
 -------------------------------
@@ -35,22 +32,6 @@ tags:  [ Algorithm ]
 -------------------------------
 
 ```c++
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-void Recursion(int start, int end);
-
-int vec[9] = { 1, 2, 3, 4, 5, 6, 7, 8 };
-int target = 2;
-
-int main()
-{
-    Recursion(0, 9);
-    return 0;
-}
-
 void Recursion(int start, int end)
 {
     int mid = (start + end) / 2;
@@ -68,4 +49,56 @@ void Recursion(int start, int end)
 }
 ```
 
+## 이진탐색의 Lower, Upper bound 개념과 구현
+--------------------------------------
 
+탐색할 컨테이너에 원하는 값이 딱 1개만 있을때는 이 개념은 필요 하지않다.
+
+이 개념이 필요할 때는 중복된 값이 있고 그 값의 범위를 찾아야 할때다.
+
+-------------------------------
+![DeskTop View](/assets/img/lower_upper.png){: w= "500" h= "350"}
+
+--------------------------------
+
+이런 모양으로 Lower일땐 범위의 시작인덱스, Upper일땐 범위를 벗어난 시작인덱스를 찾는다.
+
+Lower와 Upper는 거의 흡사하지만 쪼금 다르니 잘 봐야한다. 만들어 보는걸 추천한다.
+
+
+```c++
+// Lower 범위의 시작을 찾는다.
+void Lower(int start, int end, int n)
+{
+    int left = start;
+    int right = end;
+
+    while (left < right)
+    {
+        int mid = (left + right) / 2;
+
+        if (arr[mid] < n)
+            left = mid + 1;
+        else
+            right = mid;
+    }
+}
+
+// Upper 범위를 벗어난 시작을 찾는다.
+void Upper(int start, int end, int n)
+{
+    int left = start;
+    int right = end;
+
+    while (left < right)
+    {
+        int mid = (left + right) / 2;
+
+        // 범위밖 까지 가야 하기 때문에 <=
+        if (arr[mid] <= n)
+            left = mid + 1;
+        else
+            right = mid;
+    }
+}
+```
