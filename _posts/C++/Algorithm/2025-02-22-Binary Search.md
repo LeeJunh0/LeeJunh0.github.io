@@ -17,7 +17,7 @@ tags:  [ Algorithm ]
 배열 내의 값을 탐색하는데 사용되지만 리스트, 트리 등에서도 사용할 수 있다.
 
 -------------------------------
-![DeskTop View](/assets/img/binarysearch.png){: w= "500" h= "350"}
+![DeskTop View](/assets/img/binarysearch.png){: w= "700" h= "350"}
 
 -------------------------------
 
