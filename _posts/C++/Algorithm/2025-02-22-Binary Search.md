@@ -17,7 +17,7 @@ tags:  [ Algorithm ]
 배열 내의 값을 탐색하는데 사용되지만 리스트, 트리 등에서도 사용할 수 있다.
 
 -------------------------------
-![DeskTop View](/assets/img/binarysearch.png){: w= "700" h= "350"}
+![DeskTop View](/assets/img/binarysearch.png){: w= "500" h= "350"}
 
 -------------------------------
 
@@ -57,7 +57,7 @@ void Recursion(int start, int end)
 이 개념이 필요할 때는 중복된 값이 있고 그 값의 범위를 찾아야 할때다.
 
 -------------------------------
-![DeskTop View](/assets/img/lower_upper.png){: w= "500" h= "350"}
+![DeskTop View](/assets/img/lower_upper.png){: w= "700" h= "350"}
 
 --------------------------------
 
